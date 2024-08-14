@@ -1,0 +1,33 @@
+@use "../utils/variables" as *;
+@use "../utils/include-media" as *;
+@use "../utils/mixins" as *;
+
+.about {
+  padding: 0 2rem;
+
+  @include media(">=tablet") {
+    padding: 0 3rem;
+  }
+  @include media(">=mindesk") {
+    padding: 0 8rem;
+    min-height: 100vh;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+  }
+  p {
+    display: block;
+    color: $clr-white;
+    font-size: 4rem;
+    font-weight: 500;
+    @include media(">=tablet") {
+      font-size: 5rem;
+    }
+    @include media(">=mindesk") {
+      font-size: 7rem;
+      max-width: 38ch;
+      margin: 0 auto;
+    }
+  }
+}

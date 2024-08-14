@@ -1,0 +1,95 @@
+@use "../utils/variables" as *;
+@use "../utils/include-media" as *;
+@use "../utils/mixins" as *;
+
+.cta {
+  font-family: "Inter";
+  background-color: $clr-accent;
+  margin: 7rem 0 0 0;
+  padding: 6rem 3rem;
+  color: $clr-black;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-evenly;
+  align-items: center;
+  overflow: hidden;
+
+  @include media(">=tablet") {
+    padding: 9rem 3rem;
+  }
+  @include media(">=mindesk") {
+    padding: 12rem 3rem;
+  }
+  .right {
+    position: relative;
+    isolation: isolate;
+  }
+  img {
+    position: absolute;
+    top: 4rem;
+    transform: translate(-50%, -50%);
+    height: 25rem;
+    right: -15rem;
+    z-index: -1;
+    @include media(">=tablet") {
+      height: 40rem;
+      right: -25rem;
+    }
+    @include media(">=mindesk") {
+      height: 68rem;
+      right: -45rem;
+    }
+  }
+
+  p {
+    font-family: "Inter";
+    font-size: 2.5rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    @include media(">=tablet") {
+      font-size: 4rem;
+    }
+    @include media(">=mindesk") {
+      font-size: 8.9rem;
+    }
+  }
+
+  span {
+    font-weight: 700;
+  }
+
+  .circle {
+    background-color: $clr-black;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 6rem;
+    width: 6rem;
+    border-radius: 50%;
+    position: relative;
+    z-index: 1;
+    @include media(">=tablet") {
+      height: 9rem;
+      width: 9rem;
+    }
+    @include media(">=mindesk") {
+      height: 14rem;
+      width: 14rem;
+    }
+    & p {
+      font-family: "Inter";
+      color: $clr-white;
+      font-size: 0.8rem;
+      display: inline-block;
+      text-align: center;
+      text-transform: uppercase;
+      @include media(">=tablet") {
+        font-size: 1.6rem;
+      }
+      @include media(">=mindesk") {
+        font-size: 1.6rem;
+      }
+    }
+  }
+}

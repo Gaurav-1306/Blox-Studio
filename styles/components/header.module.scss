@@ -1,0 +1,130 @@
+@use "../utils/variables" as *;
+@use "../utils/include-media" as *;
+@use "../utils/mixins" as *;
+
+.header {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+
+  & .blurrybg{
+    position: absolute;
+    top: 0;
+    left:0;
+    height: 50rem;
+    width:40%;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    border-radius: 50% 22% 40% 80%;  
+    filter: blur(100px);
+    background: radial-gradient(circle at 50% 50%,hsla(20,50%,50%,1), transparent);
+    opacity: 0.3;   
+
+    @include media('>=tablet'){
+      height: 60rem;
+      width: 60rem;
+      top: 30%;
+      left: 50%;
+    }
+
+    @include media('>=mindesk'){
+      height: 80rem;
+      width: 80rem;
+      top: 10%;
+      left: 50%;
+    }
+  }
+
+  & .blurrybg1{
+    position: absolute;
+    height: 40rem;
+    width:50%;
+    top: -10%;
+    left: 70%;
+    transform: translate(-50%, 0%);
+    border-radius: 50% 22% 40% 80%;  
+    filter: blur(100px);
+    background: radial-gradient(circle at 50% 50%,rgba(76, 0, 255, 1), rgba(76, 0, 255, 0));
+    opacity: 0.2;   
+
+    @include media('>=tablet'){
+      height: 60rem;
+      width: 60rem;
+      top: -10%;
+      left: 70%;
+    }
+
+    @include media('>=mindesk'){
+      height: 80rem;
+      width: 80rem;
+      top: -30%;
+      left: 70%;
+    }
+  }
+
+  & .textContainer {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+  }
+  .textLine {
+    font-size: 50px;
+    font-weight: 600;
+
+    @include media(">=tablet") {
+      font-size: 120px;
+    }
+    @include media(">=mindesk") {
+      font-size: 180px;
+    }
+  }
+
+  .textLine text {
+    font-family: "ClashDisplay-Variable", "ClashDisplay-Extralight",
+      "ClashDisplay-Medium", "ClashDisplay-Semibold", "ClashDisplay-Bold",
+      sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    letter-spacing: 2px;
+  }
+  svg {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  svg:nth-of-type(2) {
+    margin-top: -10px;
+    opacity: 0.6;
+    @include media(">=mindesk") {
+      margin-top: -15px;
+    }
+  }
+
+  svg:nth-of-type(3) {
+    margin-top: -20px;
+    opacity: 0.4;
+    @include media(">=mindesk") {
+      margin-top: -35px;
+    }
+  }
+  svg:nth-of-type(4) {
+    margin-top: -30px;
+    opacity: 0.2;
+    @include media(">=mindesk") {
+      margin-top: -55px;
+    }
+  }
+  svg:nth-of-type(5) {
+    margin-top: -40px;
+    opacity: 0.1;
+
+    @include media(">=mindesk") {
+      margin-top: -75px;
+    }
+  }
+}
