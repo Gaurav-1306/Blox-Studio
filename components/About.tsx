@@ -9,6 +9,7 @@ function About(): JSX.Element {
       </p>
     </section>
   );
+  // adding comments
 }
 
 export default About;
